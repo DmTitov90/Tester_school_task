@@ -37,7 +37,7 @@ public class Test_2 {
         change = cash - price;
         changeMethod(change);
 
-
+        //Вывод через запятую элементов
         StringBuilder resultStr = new StringBuilder();
         for (int i = 0; i < result.size(); i++) {
             if (i == result.size() - 1) {
@@ -47,10 +47,10 @@ public class Test_2 {
                 resultStr.append(", ");
             }
         }
-
+        //Вывод сдачи
         System.out.println(resultStr);
     }
-
+    // Метод для рассчета колличества купюр
     public static void changeMethod(int x) {
         while (x > 0) {
             if (x / 5000 > 0) {
