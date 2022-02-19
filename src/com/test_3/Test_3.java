@@ -7,9 +7,10 @@ import java.util.*;
  * Date 19.02.2022 Version 1.0.0
  */
 public class Test_3 {
-    static int cyclCount = 5;
-    static int count = 0;
-    static int[] arr = new int[]{2, -1, 2, 0, 1};
+    //Кол-во циклопов.
+    static int cyclCount = 6;
+    //Массив N чисел.
+    static int[] arr = new int[]{2, -1, 2, 0, 1, 3};
 
     public static void main(String[] args) {
         //создаем Множество(Set) чтобы проверять дубликаты
@@ -19,6 +20,7 @@ public class Test_3 {
         //Сортируем линзы
         Arrays.sort(arr);
         //Добавляем диапазоны допустимых линз для каждого циклопа
+        int count = 0;
         for (int i : arr) {
             list.add(new ArrayList<>(Arrays.asList(i - 1, i, i + 1)));
         }
