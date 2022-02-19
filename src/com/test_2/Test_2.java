@@ -50,72 +50,73 @@ public class Test_2 {
         //Вывод сдачи
         System.out.println(resultStr);
     }
+
     // Метод для рассчета колличества купюр
-    public static void changeMethod(int x) {
-        while (x > 0) {
-            if (x / 5000 > 0) {
-                fiveThousand = x / 5000;
-                x %= 5000;
+    public static void changeMethod(int leftChange) {
+        while (leftChange > 0) {
+            if (leftChange / 5000 > 0) {
+                fiveThousand = leftChange / 5000;
+                leftChange %= 5000;
                 if (fiveThousand > 0) {
                     result.add("5000 руб: " + fiveThousand + " шт.");
                 }
-            } else if (x / 2000 > 0) {
-                twoThousand = x / 2000;
-                x %= 2000;
+            } else if (leftChange / 2000 > 0) {
+                twoThousand = leftChange / 2000;
+                leftChange %= 2000;
                 if (twoThousand > 0) {
                     result.add("2000 руб: " + twoThousand + " шт.");
                 }
-            } else if (x / 1000 > 0) {
-                oneThousand = x / 1000;
-                x %= 1000;
+            } else if (leftChange / 1000 > 0) {
+                oneThousand = leftChange / 1000;
+                leftChange %= 1000;
                 if (oneThousand > 0) {
                     result.add("1000 руб: " + oneThousand + " шт.");
                 }
-            } else if (x / 500 > 0) {
-                fiveHundred = x / 500;
-                x %= 500;
+            } else if (leftChange / 500 > 0) {
+                fiveHundred = leftChange / 500;
+                leftChange %= 500;
                 if (fiveHundred > 0) {
                     result.add("500 руб: " + fiveHundred + " шт.");
                 }
-            } else if (x / 200 > 0) {
-                twoHundred = x / 200;
-                x %= 200;
+            } else if (leftChange / 200 > 0) {
+                twoHundred = leftChange / 200;
+                leftChange %= 200;
                 if (twoHundred > 0) {
                     result.add("200 руб: " + twoHundred + " шт.");
                 }
-            } else if (x / 100 > 0) {
-                oneHundred = x / 100;
-                x %= 100;
+            } else if (leftChange / 100 > 0) {
+                oneHundred = leftChange / 100;
+                leftChange %= 100;
                 if (oneHundred > 0) {
                     result.add("100 руб: " + oneHundred + " шт.");
                 }
-            } else if (x / 50 > 0) {
-                fifty = x / 50;
-                x %= 50;
+            } else if (leftChange / 50 > 0) {
+                fifty = leftChange / 50;
+                leftChange %= 50;
                 if (fifty > 0) {
                     result.add("50 руб: " + fifty + " шт.");
                 }
-            } else if (x / 10 > 0) {
-                ten = x / 10;
-                x %= 10;
+            } else if (leftChange / 10 > 0) {
+                ten = leftChange / 10;
+                leftChange %= 10;
                 if (ten > 0) {
                     result.add("10 руб: " + ten + " шт.");
                 }
-            } else if (x / 5 > 0) {
-                five = x / 5;
-                x %= 5;
+            } else if (leftChange / 5 > 0) {
+                five = leftChange / 5;
+                leftChange %= 5;
                 if (five > 0) {
                     result.add("5 руб: " + five + " шт.");
                 }
-            } else if (x / 2 > 0) {
-                two = x / 2;
-                x %= 2;
+            } else if (leftChange / 2 > 0) {
+                two = leftChange / 2;
+                leftChange %= 2;
                 if (two > 0) {
                     result.add("2 руб: " + two + " шт.");
                 }
             } else {
-                one = x;
-                x %= 1;
+                one = leftChange;
+                leftChange %= 1;
                 result.add("1 руб: " + one + " шт.");
             }
         }
