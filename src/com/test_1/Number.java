@@ -9,7 +9,7 @@ class Number {
         this.userNumber = Integer.parseInt(userNumber);
     }
 
-    public void start(){
+    public void start() {
         System.out.println("Сумма простых чисел : " + checker());
     }
 
