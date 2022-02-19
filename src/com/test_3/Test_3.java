@@ -34,10 +34,11 @@ public class Test_3 {
                 }
             }
         }
+        System.out.println(count);
         if (count * 2 == cyclCount - 1) {
-            System.out.println(count);
+            System.out.println(++count);
         } else {
-            System.out.println(count++);
+            System.out.println(count);
         }
     }
 }

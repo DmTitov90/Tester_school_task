@@ -14,10 +14,9 @@ class Number {
     }
 
     private int checker() {
-        for (int primeNumber = 0; primeNumber <= userNumber; primeNumber++) {
-            for (int i = 2; i < primeNumber; i++) {
+        for (int primeNumber = 1; primeNumber <= userNumber; primeNumber++) {
+            for (int i = 1; i < primeNumber; i++) {
                 if (primeNumber % i == 0) {
-                    check = false;
                     break;
                 }
             }
