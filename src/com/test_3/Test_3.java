@@ -1,31 +1,49 @@
 package com.test_3;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Test_3 {
-
     static int count = 0;
-    static int cyclCount = 5;
-    static int[] arr = new int[]{1, -1, 2, 3, -3};
+    static int[] arr = new int[]{2, -1, 2, 0, 6, 3};
 
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Введите число циклопов: ");
+        int cyclCount = Integer.parseInt(reader.readLine());
 
-    public static void main(String[] args) {
+        int[] alist = new int[10];
+        for (int i = 0; i < alist.length; i++)
+        {
+            String s = reader.readLine();
+            alist[i] = Integer.parseInt(s);
+        }
+
         Set<Integer> set = new HashSet<>();
         List<List<Integer>> list = new ArrayList<>();
+        Arrays.sort(arr);
         for (int i : arr) {
-            list.add(Arrays.asList(i-1, i, i+1));
+            list.add(new ArrayList<>(Arrays.asList(i - 1, i, i + 1)));
         }
 
         for (List<Integer> integers : list) {
             for (Integer integer : integers) {
-                if (!set.contains(integer)){
-                    set.add(integer);
-                } else {
+                if (set.contains(integer)) {
                     count++;
+                    set.clear();
                     break;
+                } else {
+                    set.add(integer);
                 }
             }
         }
-        System.out.println(count);
+
+        if (count * 2 == cyclCount - 1) {
+            System.out.println(++count);
+        } else {
+            System.out.println(count);
+        }
     }
 }

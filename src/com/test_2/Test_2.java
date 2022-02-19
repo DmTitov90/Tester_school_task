@@ -35,8 +35,7 @@ public class Test_2 {
         System.out.print("\n" + "Введите внесенную сумму: ");
         int cash = Integer.parseInt(reader.readLine());
         change = cash - price;
-        System.out.print("Ваша сдача : ");
-        method(change);
+        changeMethod(change);
 
 
         StringBuilder resultStr = new StringBuilder();
@@ -52,7 +51,7 @@ public class Test_2 {
         System.out.println(resultStr);
     }
 
-    public static void method(int x) {
+    public static void changeMethod(int x) {
         while (x > 0) {
             if (x / 5000 > 0) {
                 fiveThousand = x / 5000;
